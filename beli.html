@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h1 style="margin-left: 35%; font-size: 80px;" id="name"></h1>
+<hr>
+    <img id="image" width="400" style="margin-left: 35%; border-radius: 50px;">
+
+
+    <p style="margin-left: 35%; font-size: 20px;" id="price"></p>
+
+
+
+    <input style="margin-left: 35%;"  type="text" placeholder="Alamat">
+
+    <select style="margin-left: 5%;">
+        <option>DANA</option>
+        <option>BCA</option>
+        <option>GOPAY</option>
+    </select>
+
+    <br><br>
+
+    <button style="margin-left: 35%;" onclick="bayar()">bayar</button>
+
+
+       <script>
+
+        document.getElementById("name").innerHTML =
+        localStorage.getItem("name");
+
+        document.getElementById("price").innerHTML =
+        "Rp. " + localStorage.getItem("price");
+
+        document.getElementById("image").src =
+        localStorage.getItem("image");
+
+
+        function bayar() {
+
+            alert("Pembayaran berhasil");
+
+        }
+
+    </script>
+</body>
+
+</html>

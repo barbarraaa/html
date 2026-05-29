@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <style>
+
+        body {
+            background-color: wheat;
+            margin: 0;
+            
+        }
+
+        .text {
+            color:black;
+            font-size:20px;
+            text-align:justify;
+
+        }
+
+        .judul {
+            color:aliceblue;
+            font-size:40px;
+
+        }
+
+        .hero {
+            display: block;
+            height: 450px;
+            width: 100%;
+
+            background-image: url("latte.jpg.jpeg");
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        .button {
+            background-color: red;
+            margin-left: 20px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 999px;
+        }
+
+        .navbar a  {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            color: red !important;
+            
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+        }
+
+        .menu img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+
+        }
+
+        .section {
+            background-color: white;
+            height: 400px;
+            width: 1000px;
+            margin-left: 100px;
+            border: none;
+            border-radius: 50px;
+        }
+
+        .hero-1 {
+            display: block;
+            height: 420px;
+            width: 100%;
+
+            background-image: url("coffee-beans.jpg.jpeg");
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: no-repeat;
+        }
+
+        .footer {
+            background-color: brown;
+            height: 150px;
+            width: 100%;
+        }
+
+    </style>
+    </head>
+    
+    <div class="hero">
+
+    <nav class="navbar">
+        <a href="#">HOME</a>
+        <a href="https://wa.me/623171596700">CONTACT</a>
+        <a href="">MENU</a>
+
+    </nav>
+
+     <body>
+           <section>
+                <h1 class="judul">JUKO COFFEE</h1>
+                <span style="font-size: 30px; color: whitesmoke;">By:Bhewww</span>
+                <br>
+                <span style="color: aliceblue;">Cikarang selatan,Ciantra,Perum.GCI blok:D2,No.04</span>
+                    <br><br><br><br>
+                
+                <p style="color: aliceblue; font-size: 30px; margin-left: 800px;">SMALL CUPS FOR <br>
+                    BIG AVOIDANCE
+                </p>
+                <br> 
+
+                <button class="button" onclick="scrollMenu()">ORDER NOW</button>
+           </section>
+        </div><br>
+                <p style="font-size: 60px; color: black; margin-left: 300px;">NO MATCHA PLEASE</p>
+        <br> <br> <br> <br> <br> 
+        <section class="section" id="menu">
+                  <h2 style="color: black; font-size: 20px; margin-left: 400px; ">OUR SPECIAL COFFEE</h2>
+
+                   <div class="menu">
+                    <figure>
+                    <img src="v60_brewing.jpg.jpeg" alt="">
+                    <figcaption>Filter coffee <br> japanese</figcaption>
+                    <span id="harga">Rp.42.000</span><br>
+                    <select id="beans1" onchange="ubahHarga()">
+                        <option value="ETHIOPIA-YIRGACHEFFE - Rp.42.000">ETHIOPIA-YIRGACHEFFE</option>
+                        <option value="38000">ETHIOPIA-SIDAMO</option>
+                        <option value="78000">Panama geisha</option>
+                        <option value="72000">jamaica blue mountain</option>
+                        <option value="35000">Aceh gayo</option>
+                    </select><br><br>
+                    <button class="button" onclick="buy(
+                         'japanese',getElementById('beans1').value,
+                          document.getElementById('beans1').options[
+                    document.getElementById('beans1').selectedIndex
+                ].text,
+                          'v60_brewing.jpg.jpeg')">
+                        Order now</button>
+                        
+                    </figure>
+
+                    <figure>
+                        <img style="height: 200px; width: 200px;" src="latte.jpeg.webp" alt="">
+                        <figcaption>hot latte</figcaption>
+                        <span id="harga">Rp.70.000</span><br>
+                        <select id="beans3" onchange="ubahHarga()">
+                            <option value="70000">Panama geisha</option>
+                            <option value="34000">ETHIOPIA-SIDAMO</option>
+                            <option value="36000">ETHIOPIA-YIRGACHEFFE</option>
+                            <option value="65000">Jamaica blue mountain</option>
+                            <option value="32000">Aceh gayo</option>
+                        </select><br><br>
+                        <button class="button" onclick="buy(
+                             'latte', getElementById('beans3').value, 
+                               document.getElementById('beans3').options[
+                    document.getElementById('beans3').selectedIndex
+                ].text,
+                             'latte.jpeg.webp')">Order now</button>
+                    </figure>
+
+                    <figure>
+                        <img src="cold-brew.jpg.jpeg" alt="">
+                        <figcaption>Cold brew</figcaption>
+                        <span id="harga">Rp.85.000</span><br>
+                        <select id="beans2" onchange="ubahHarga()">
+                            <option value="85000">Panama geisha</option>
+                            <option value="40000">ETHIOPIA-SIDAMO</option>
+                            <option value="45000">ETHIOPIA-YIRGACHEFFE</option>
+                            <option value="37000"> Aceh gayo</option>
+                        </select><br><br>
+                        <button class="button" onclick="buy(
+                             'cold brew',getElementById('beans2').value,
+                               document.getElementById('beans2').options[
+                    document.getElementById('beans2').selectedIndex
+                ].text,
+                              'cold-brew.jpg.jpeg')">Order now</button>
+                    </figure>
+
+                   </div>
+
+            </section>
+
+        <section class="section">
+           <h3 style="color: black; font-size: 20px; margin-left: 400px;">OUR SPECIAL DESSERT</h3>
+
+           <div class="menu">
+            <figure>
+                <img src="Peanut_Butter_Pretzel_Pie_012-09c44a5d8f164dbeb149035b5eae14fe.jpg.jpeg" alt="">
+                <figcaption>Peanut butter pretzel</figcaption>
+                <span>Rp.50.000</span><br><br>
+                <button class="button" onclick="beli( 'Peanut butter pretzel',50000, 'Peanut_Butter_Pretzel_Pie_012-09c44a5d8f164dbeb149035b5eae14fe.jpg.jpeg' )">Order now</button>
+            </figure>
+
+            <figure>
+                <img src="Tres-Leches-Cake-18-500x500.jpg.jpeg" alt="">
+                <figcaption>Tres leches</figcaption>
+                <span>Rp.55.000</span><br><br>
+                <button class="button" onclick="beli( 'Tres leches', 55000, 'Tres-Leches-Cake-18-500x500.jpg.jpeg')">Order now</button>
+            </figure>
+
+            <figure>
+                <img src="1689616126418-scaled-1.jpg.jpeg" alt="">
+                <figcaption>Gelato</figcaption>
+                <span>Rp.55.000</span><br><br>
+                <button class="button" onclick="beli( 'Gelato', 55000, '1689616126418-scaled-1.jpg.jpeg')">Order now</button>
+            </figure>
+           </div>
+        </section>
+<br> <br>
+        <article class="hero-1">
+            <h4 style="color: white; font-size: 100px;">
+                We also provide <br> specialty coffee beans!!!
+            </h4>
+            <button class="button" onclick="pindah()">See now</button>
+        </article>
+<br> <br>
+        <footer class="footer">
+        <span style="color: white; font-size: 50px;">SMALL CUPS FOR BIG AVOIDANCE.</span>
+
+            <ul>
+                <span style="color: white; font-size: 20px; margin-left: 85%;">SOCIAL MEDIA</span>
+                <li style="color: white; font-size: 20px; margin-left: 90%;">Just.JUKO</li>
+            </ul>
+            <br>
+            @2026 JUKO
+        </footer>
+
+        <script>
+
+            function pindah() {
+
+                window.location.href = "beans.html";
+
+            }
+
+            function scrollMenu() {
+
+                document
+                .getElementById("menu")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+            }
+
+             function ubahHarga() {
+
+            let beans =
+            document.getElementById("beans");
+
+            let harga =
+            beans.value 
+
+            document.getElementById("harga")
+            .innerHTML = "Rp." + harga;
+        }
+
+            function buy(name, beans, price, image) {
+
+                localStorage.setItem("name", name)
+                localStorage.setItem('beans', beans)
+                localStorage.setItem("price", price)
+                localStorage.setItem("image", image)
+
+                window.location.href = "checkout.html";
+
+            }
+
+            function beli(name, price, image) {
+
+                localStorage.setItem("name", name)
+                localStorage.setItem("price", price)
+                localStorage.setItem("image", image)
+
+                window.location.href = "beli.html";
+
+            }
+        </script>
+     </body>
+</html>

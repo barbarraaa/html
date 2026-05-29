@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+    #search {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 10%;
+
+        }
+
+        figure {
+            width: 150px;
+            margin: 0;
+        }
+
+        .menu img {
+            width: 100px;
+            height: auto;
+            border-radius: 10px;
+
+        }
+
+        .button {
+            background-color: red;
+            margin-left: 20px;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 999px;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            background-image: url("IMG_20260526_234033.jpg.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+</style>
+</head>
+
+<body>
+    
+    <input type="text" id="search" placeholder="Cari" onkeyup="searchItem()">
+
+    <p style="font-size: 50px; margin-left: 300px;">BEANS BY:JUKO ROASTERY</p>
+    
+
+       <div class="menu body">
+
+        <figure>
+            <img src="800x.jpg.jpeg" alt="">
+            <figcaption style="font-size: 20px;" class="item">Jamaica blue mountain</figcaption>
+            <span id="harga">Rp.230.000</span>
+            <select id="gram1" onchange="ubahHarga()">
+                            <option value="100g - Rp.230000">100g</option>
+                            <option value="250g - Rp.540000">250g</option>
+                            <option value="500g - Rp.980000">500g</option>
+                        </select><br><br>
+            <button class="button" onclick="order( 
+                'Jamaica blue mountain', document.getElementById('gram1').value,
+                document.getElementById('gram1').options[
+                    document.getElementById('gram1').selectedIndex
+                ].text,
+              '800x.jpg.jpeg' )">Buy</button>
+        </figure>
+        
+        <figure>
+            <img src="ETHIOPIA-SIDAMO-2.jpg.jpeg" alt="">
+            <figcaption style="font-size: 20px;" class="item">egEthiopia sidamo</figcaption>
+            <span id="harga">Rp.78.000</span>
+            <select id="gram2" onchange="ubahHarga()">
+                            <option value="100g - Rp.78000">100g</option>
+                            <option value="250g - Rp.165000">250g</option>
+                            <option value="500g - Rp.310000">500g</option>
+                        </select><br><br>
+            <button class="button" onclick="order(
+                 'ETHIOPIA-YIRGACHEFFE', document.getElementById('gram2').value,
+                  document.getElementById('gram2').options[
+                    document.getElementById('gram2').selectedIndex
+                ].text,
+              'ETHIOPIA-SIDAMO-2.jpg.jpeg' )" >Buy</button>
+        </figure>
+
+        <figure>
+            <img src="8_PANAMAGEISHA_2.jpg.jpeg" alt="">
+            <figcaption style="font-size: 20px;" class="item">Panama geisha</figcaption>
+            <span id="harga">Rp.250.000</span>
+            <select id="gram3" onchange="ubahHarga()">
+                            <option value="100g - Rp.250000">100g</option>
+                            <option value="250g - Rp.580000">250g</option>
+                            <option value="500g - Rp.11000000">500g</option>
+                        </select><br><br>
+            <button class="button" onclick="order(
+                 'Panama geisha', document.getElementById('gram3').value,
+                  document.getElementById('gram3').options[
+                    document.getElementById('gram3').selectedIndex
+                ].text,
+              '8_PANAMAGEISHA_2.jpg.jpeg' )">Buy</button>
+        </figure>
+         
+        <figure>
+            <img src="ETHIOPIA-YIRGACHEFFE.jpg.jpeg" alt="">
+            <figcaption style="font-size: 20px;" class="item">Ethiopia yirgacheffe</figcaption>
+            <span id="harga">Rp.85.000</span>
+            <select id="gram4" onchange="ubahHarga()">
+                            <option value="100g - Rp.85000">100g</option>
+                            <option value="250g - Rp.180000">250g</option>
+                            <option value="500g - Rp.340000">500g</option>
+                        </select><br><br>
+            <button class="button" onclick="order(
+                 'ETHIOPIA-SIDAMO', document.getElementById('gram4').value,
+                  document.getElementById('gram4').options[
+                    document.getElementById('gram4').selectedIndex
+                ].text,
+              'ETHIOPIA-YIRGACHEFFE.jpg.jpeg' )">Buy</button>
+        </figure>
+
+        <figure>
+            <img src="0175f84ac18fd3e56740420e140292f7.png" alt="">
+            <figcaption style="font-size: 20px;" class="item">Aceh gayo</figcaption>
+            <span id="harga">Rp.65.000</span>
+            <select id="gram5" onchange="ubahHarga()">
+                            <option value="100g - Rp.65000">100g</option>
+                            <option value="250g - Rp.140000">250g</option>
+                            <option value="500g - Rp.260000">500g</option>
+                        </select><br><br>
+            <button class="button" onclick="order(
+                 'Aceh gayo', document.getElementById('gram5').value,
+                  document.getElementById('gram5').options[
+                    document.getElementById('gram5').selectedIndex
+                ].text,
+              '0175f84ac18fd3e56740420e140292f7.png' )">BUy</button>
+        </figure>
+    </div>
+
+     <script>
+        
+        function ubahHarga() {
+
+            let gram =
+            document.getElementById("gram");
+
+        }
+
+        function order(name, gram, harga, image) {
+
+                localStorage.setItem("name", name)
+
+                localStorage.setItem("gram", gram)
+
+                localStorage.setItem("harga", harga)
+
+                localStorage.setItem("image", image)
+
+                window.location.href = "order.html";
+
+            }
+
+            const search = document.getElementById("search");
+            const item = document.querySelectorAll(".item");
+
+            search.addEventListener("input", function () {
+                const value = this.value.toLowerCase();
+
+                items.forEach(item, function () {
+                    const text = item.textContent.toLowerCase();
+                    item.style.display = text.includes(value) ?
+                    "block" : "none";
+                });
+            });
+
+     </script>
+
+
+</body>
+</html>
